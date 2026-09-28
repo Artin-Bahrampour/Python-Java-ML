@@ -1,0 +1,40 @@
+{
+  "observations": [
+    {
+      "latency_ms": 100,
+      "error_rate": 0.01,
+      "cpu_percent": 40,
+      "requests_per_minute": 500
+    },
+    {
+      "latency_ms": 102,
+      "error_rate": 0.01,
+      "cpu_percent": 42,
+      "requests_per_minute": 510
+    },
+    {
+      "latency_ms": 98,
+      "error_rate": 0.02,
+      "cpu_percent": 39,
+      "requests_per_minute": 495
+    },
+    {
+      "latency_ms": 105,
+      "error_rate": 0.01,
+      "cpu_percent": 44,
+      "requests_per_minute": 520
+    },
+    {
+      "latency_ms": 101,
+      "error_rate": 0.02,
+      "cpu_percent": 41,
+      "requests_per_minute": 505
+    },
+    {
+      "latency_ms": 1100,
+      "error_rate": 0.4,
+      "cpu_percent": 98,
+      "requests_per_minute": 60
+    }
+  ]
+}
