@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./data/telemetry.db
+      MODEL_PATH: ./data/model.joblib
+      LOG_LEVEL: INFO
+    volumes:
+      - telemetry_data:/app/data
+
+volumes:
+  telemetry_data:
