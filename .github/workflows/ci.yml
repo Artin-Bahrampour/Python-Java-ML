@@ -9,6 +9,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - projects/service-health-anomaly-detector
+          - projects/service-reliability-anomaly-platform
+          - projects/feature-drift-monitor
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
