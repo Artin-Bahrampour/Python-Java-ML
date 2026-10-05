@@ -1,0 +1,16 @@
+[project]
+name = "data-contract-validator"
+version = "1.0.0"
+description = "Production-oriented data contract validation and quality gate for batch data pipelines."
+requires-python = ">=3.12"
+dependencies = ["PyYAML>=6.0,<7"]
+
+[project.scripts]
+dcv = "dcv.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

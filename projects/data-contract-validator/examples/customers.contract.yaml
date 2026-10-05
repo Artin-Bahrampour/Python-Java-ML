@@ -1,0 +1,21 @@
+version: 1
+reject_unknown_columns: true
+columns:
+  customer_id:
+    type: string
+    nullable: false
+    unique: true
+    max_null_ratio: 0
+  email:
+    type: email
+    nullable: false
+    unique: true
+    max_null_ratio: 0
+  country:
+    type: string
+    nullable: false
+    allowed: ["NO", "SE", "DK", "FI"]
+  age:
+    type: integer
+    nullable: false
+    max_null_ratio: 0

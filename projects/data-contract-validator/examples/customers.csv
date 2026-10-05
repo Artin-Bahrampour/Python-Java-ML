@@ -1,0 +1,4 @@
+customer_id,email,country,age
+c-001,alice@example.com,NO,31
+c-002,bob@example.com,SE,44
+c-003,carol@example.com,NO,27
