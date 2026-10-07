@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: Accounts API
+  version: 1.5.0
+paths:
+  /accounts/{accountId}:
+    get:
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Account details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+components:
+  schemas:
+    Account:
+      type: object
+      required: [id, status, displayName]
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum: [ACTIVE, CLOSED]
+        displayName:
+          type: string
