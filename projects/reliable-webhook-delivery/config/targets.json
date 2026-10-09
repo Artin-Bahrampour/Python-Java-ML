@@ -1,0 +1,9 @@
+{
+  "targets": [
+    {
+      "id": "billing",
+      "url": "https://hooks.example.test/events",
+      "secret_env": "BILLING_WEBHOOK_SECRET"
+    }
+  ]
+}

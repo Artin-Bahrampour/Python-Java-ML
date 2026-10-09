@@ -1,0 +1,9 @@
+{
+  "targets": [
+    {
+      "id": "local-receiver",
+      "url": "http://receiver:8081/webhooks",
+      "secret_env": "WEBHOOK_DEMO_SECRET"
+    }
+  ]
+}

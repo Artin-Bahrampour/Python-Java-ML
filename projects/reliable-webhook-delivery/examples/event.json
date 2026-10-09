@@ -1,0 +1,11 @@
+{
+  "target_id": "local-receiver",
+  "event_type": "invoice.paid",
+  "payload": {
+    "invoice_id": "inv_2026_000184",
+    "account_id": "acct_2048",
+    "amount_minor": 129900,
+    "currency": "NOK",
+    "occurred_at": "2026-10-09T05:30:00Z"
+  }
+}
