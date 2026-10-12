@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69,<81", "wheel>=0.42,<1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sql-lineage-impact-analyzer"
+version = "1.0.0"
+description = "Deterministic SQL model lineage and downstream impact analysis for data engineering repositories."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "Artin Bahrampour" }]
+dependencies = [
+  "sqlglot>=26.0,<31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9.0",
+  "ruff>=0.9,<1.0",
+  "pip-audit>=2.7,<3.0",
+]
+
+[project.scripts]
+lineage-guard = "lineage_guard.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
