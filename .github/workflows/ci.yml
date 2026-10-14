@@ -12,12 +12,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project:
-          - projects/service-health-anomaly-detector
-          - projects/service-reliability-anomaly-platform
-          - projects/feature-drift-monitor
-          - projects/sql-lineage-impact-analyzer
-          - projects/customer-retention-ml
+        include:
+          - project: projects/service-health-anomaly-detector
+            python-version: "3.11"
+          - project: projects/service-reliability-anomaly-platform
+            python-version: "3.11"
+          - project: projects/feature-drift-monitor
+            python-version: "3.11"
+          - project: projects/sql-lineage-impact-analyzer
+            python-version: "3.12"
+          - project: projects/customer-retention-ml
+            python-version: "3.11"
 
     defaults:
       run:
@@ -30,7 +35,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
