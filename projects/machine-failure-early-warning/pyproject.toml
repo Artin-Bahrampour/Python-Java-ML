@@ -1,0 +1,9 @@
+[project]
+name = "machine-failure-early-warning"
+version = "1.0.0"
+description = "A reproducible machine-learning benchmark for predictive maintenance"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.ruff]
+line-length = 100
