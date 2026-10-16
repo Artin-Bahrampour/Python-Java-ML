@@ -23,6 +23,8 @@ jobs:
             python-version: "3.12"
           - project: projects/customer-retention-ml
             python-version: "3.11"
+          - project: projects/solar-pv-generation-forecasting
+            python-version: "3.11"
 
     defaults:
       run:
@@ -45,7 +47,7 @@ jobs:
           if [ -f pyproject.toml ]; then python -m pip install -e ".[dev]"; fi
 
       - name: Run Ruff checks
-        if: matrix.project == 'projects/customer-retention-ml'
+        if: contains(fromJSON('["projects/customer-retention-ml", "projects/solar-pv-generation-forecasting"]'), matrix.project)
         run: |
           ruff check .
           ruff format --check .
