@@ -1,0 +1,5 @@
+python-service/.venv/
+python-service/artifacts/
+python-service/.pytest_cache/
+python-service/__pycache__/
+java-client/out/
