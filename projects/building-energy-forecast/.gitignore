@@ -1,0 +1,5 @@
+python/.venv/
+python/artifacts/
+python/.pytest_cache/
+python/__pycache__/
+java/out/
