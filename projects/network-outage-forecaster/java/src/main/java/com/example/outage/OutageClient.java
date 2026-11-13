@@ -1,0 +1,3 @@
+package com.example.outage;
+import java.net.URI;import java.net.http.*;
+public final class OutageClient{public static void main(String[]a)throws Exception{String j="{\"signal_drop_db\":12,\"packet_loss_pct\":7,\"latency_ms\":100,\"weather_severity\":2,\"site_age_years\":4,\"alarms_6h\":3}";HttpRequest r=HttpRequest.newBuilder(URI.create("http://localhost:8000/v1/forecast")).header("Content-Type","application/json").POST(HttpRequest.BodyPublishers.ofString(j)).build();HttpResponse<String>o=HttpClient.newHttpClient().send(r,HttpResponse.BodyHandlers.ofString());if(o.statusCode()!=200)throw new IllegalStateException("forecast failed");System.out.println(o.body());}}
