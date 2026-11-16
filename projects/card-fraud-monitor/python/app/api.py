@@ -1,7 +1,12 @@
+import os,joblib
+from pathlib import Path
 from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel,Field
-from .core import F,data,fit,psi
-app=FastAPI(title="Card Fraud Monitor");B=fit(*data())
+from .core import F,psi
+app=FastAPI(title="Card Fraud Monitor")
+MODEL_PATH=Path(os.getenv("MODEL_PATH","artifacts/fraud.joblib"))
+if not MODEL_PATH.exists(): raise RuntimeError(f"model artifact missing: {MODEL_PATH}; run python -m app.train")
+B=joblib.load(MODEL_PATH)
 class Tx(BaseModel):
  amount:float=Field(gt=0,le=1e6);hour:int=Field(ge=0,le=23);merchant_risk:float=Field(ge=0,le=1);velocity_1h:int=Field(ge=0,le=100);international:int=Field(ge=0,le=1);card_age_days:int=Field(ge=0,le=10000)
 @app.get("/health")

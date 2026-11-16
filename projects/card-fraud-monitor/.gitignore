@@ -1,0 +1,4 @@
+python/.venv/
+python/artifacts/
+__pycache__/
+java/out/
